@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {ITEMS} from './feature/shared/items';
 import {FilteringService} from './feature/shared/services/filtering.service';
+import { Cart } from './feature/shared/Cart';
 /**
  * @export
  * @class AppComponent
@@ -36,7 +37,7 @@ export class AppComponent {
  */
   cart: Cart[];
   cartIds:any[];
-  isPublished:Boolean;
+  isPublished:any;
   /**
    * @param {*} $event
    * @memberof AppComponent
