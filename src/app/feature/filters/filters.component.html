@@ -1,0 +1,27 @@
+<div>
+         <mat-tab-group>
+              <mat-tab label="Filter">
+                  <mat-radio-group><br>
+                      <mat-radio-button checked (change)="filterPublished('ALL')"  value="ALL">All</mat-radio-button><br>
+                      <mat-radio-button  (change)="filterPublished(true)"  value="Published">Published</mat-radio-button><br>
+                      <mat-radio-button  (change)="filterPublished(false)"  value="Not Published">Not Published</mat-radio-button><br>
+                    </mat-radio-group>
+              </mat-tab>
+              <mat-tab label="Advanced Filter">  <ul>
+                  <li >
+              <li *ngFor="let category of filters">
+                {{category.name}}
+              <ul>
+              <li *ngFor="let filter of category.filters">
+                <div *ngIf="category.operation=='OR'">
+                    <input [name]="category.name" (change)="selectOr(category,filter,category.filters,filters)"  type="radio"/>{{filter.name}}
+                </div>
+                <div *ngIf="category.operation=='AND'">
+                    <input [checked]="filter.isSelected"  (change)="selectAnd(category,filter,category.filters,filters)" type="checkbox"/>{{filter.name}}
+                </div>
+              </li>
+            </ul>
+           </li>
+         </ul></mat-tab>
+            </mat-tab-group>
+</div>

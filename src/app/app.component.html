@@ -1,0 +1,30 @@
+
+<div>
+  <h1>
+     Code challenge!
+  </h1>
+
+<mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Apply Filter
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-filters (onFilterPublishChange)="onFilterPublishChange($event)"></app-filters>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+         Your Shopping Cart
+        </mat-panel-title>
+        <mat-panel-description>
+
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <app-cart [cart] = "cart" (removeFromCart) = "removeFromCart($event)"></app-cart>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <app-products [cart] = "cart" [products]="products" (addToCart)="addToCard($event)"></app-products>
+</div>

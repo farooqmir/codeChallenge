@@ -1,0 +1,10 @@
+<div>
+ <p *ngIf="cart.length<=0">
+       You cart is empty. Please add products.
+  </p>
+  <mat-list *ngIf="cart.length>=1">
+      <mat-list-item *ngFor="let item of cart">
+            {{item.productName}}  <button (click)="removefromcart(item)" color="warn" mat-button>Remove</button></mat-list-item>
+      <mat-divider></mat-divider>
+  </mat-list>
+</div>
