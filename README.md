@@ -20,10 +20,7 @@ Components:
 
 Install AngularCli
 
-```
-Give examples
-```
-
+ 
 ### Installing
 
 Steps for installations
